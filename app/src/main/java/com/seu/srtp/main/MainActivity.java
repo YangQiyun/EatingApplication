@@ -3,7 +3,6 @@ package com.seu.srtp.main;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -14,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.seu.srtp.data.fragment_MenuDescrition;
 
 
 public class MainActivity extends AppCompatActivity
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setLogo(R.mipmap.eating);
-        toolbar.setTitle("Eating");
+        toolbar.setTitle("  御膳房");
         setSupportActionBar(toolbar);
 
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         viewPager.setAdapter(adapter);
 
         //TabLayout
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
         //对于api23以上的版本调用以下的方法，不调用4.4版本的兼容,toolbar沉浸式状态栏
@@ -49,8 +50,10 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                fragment_MenuDescrition temp=fragment_MenuDescrition.newInstance(1);
+                temp.show(getSupportFragmentManager(),"temptext");
+                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                       // .setAction("Action", null).show();
             }
         });
 

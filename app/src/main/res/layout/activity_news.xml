@@ -32,6 +32,7 @@
                     android:layout_height="180dp"/>
                 <TextView
                     android:id="@+id/news_info_title"
+                    android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/news_info_photo"
                     android:textSize="20sp"

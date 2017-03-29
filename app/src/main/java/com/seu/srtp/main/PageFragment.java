@@ -33,7 +33,7 @@ public class PageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_one,container,false);
+        View view = inflater.inflate(R.layout.textfragment,container,false);
         TextView textView = (TextView) view.findViewById(R.id.textView1);
         textView.setText("第"+mPage+"页");
         return view;

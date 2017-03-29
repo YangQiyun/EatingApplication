@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TEST</string>
+    <string name="app_name">食堂</string>
     <string name="hello">hello</string>
     <string name="helloSub">hello Sub</string>
     <string name="login_id">账号</string>
