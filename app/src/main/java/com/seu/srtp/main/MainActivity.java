@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,12 +20,13 @@ import com.seu.srtp.data.fragment_MenuDescrition;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d(TAG, "onCreate: this is what you need!");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setLogo(R.mipmap.eating);
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 fragment_MenuDescrition temp=fragment_MenuDescrition.newInstance(1);
                 temp.show(getSupportFragmentManager(),"temptext");
+                Toast.makeText(MainActivity.this,"you clicked it",Toast.LENGTH_SHORT).show();
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                        // .setAction("Action", null).show();
             }
