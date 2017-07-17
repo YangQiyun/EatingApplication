@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.swallowman.test1"
+        applicationId "com.seu.srtp.yushanfang"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1

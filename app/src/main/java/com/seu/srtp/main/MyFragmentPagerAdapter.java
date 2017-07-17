@@ -28,6 +28,8 @@ class MyFragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter
     public Fragment getItem(int position) {
         if(position==0)
             return  FirstFragment.newInstance(position);
+        if(position==1)
+            return TrendFragment.newInstance(position);
         return com.seu.srtp.main.PageFragment.newInstance(position+2);
     }
 

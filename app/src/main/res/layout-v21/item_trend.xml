@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--论坛单条动态样式-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="false"
+        app:cardCornerRadius="3dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        >
+
+        <RelativeLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:id="@+id/hsepLine"
+                android:layout_width="fill_parent"
+                android:layout_height="3px"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#dddddd" />
+            <TextView
+                android:id="@+id/trend_commenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hsepLine"
+                android:layout_marginLeft="10px"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:minWidth="100dp"
+                android:padding="5dp"
+                android:textColor="#0c0c0c"
+                android:textSize="27sp"
+                />
+
+            <TextView
+                android:id="@+id/trend_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:minWidth="100dp"
+                android:padding="5dp"
+                android:textColor="#0c0c0c"
+                android:textSize="20sp"
+                android:layout_above="@+id/trend_content"
+                android:layout_toRightOf="@+id/trend_commenter"
+                android:layout_toEndOf="@+id/trend_commenter"
+                android:layout_marginLeft="20dp"
+                />
+
+            <TextView
+                android:id="@+id/trend_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trend_commenter"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="6dp"
+                android:maxLines="5"
+                android:minLines="5"
+                android:padding="10dp" />
+
+            <ImageButton
+                android:id="@+id/trendLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trend_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/trend_like_imagebutton"/>
+            <!--作为background的话可直接填充完美-->
+            <ImageButton
+                android:id="@+id/trendComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/trendLike"
+                android:layout_below="@id/trend_content"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/comment"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout >

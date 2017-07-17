@@ -73,10 +73,11 @@ public class FirstFragment extends Fragment {
 
     private void initData() {
         storeList =new ArrayList<>();
-        storeList.add(new Store("原生豆浆","豆浆（Soybean Milk)，中国汉族传统饮品，最早的豆浆为西汉淮南王刘安制作。将大豆用水泡涨后磨碎、过滤、煮沸而成","地点北京",R.mipmap.store_one));
-        storeList.add(new Store("神奇的牛肉面","豆浆（Soybean Milk)，中国汉族传统饮品，最早的豆浆为西汉淮南王刘安制作。将大豆用水泡涨后磨碎、过滤、煮沸而成","北京",R.mipmap.store_two));
-        storeList.add(new Store("好吃的萝卜大","豆浆（Soybean Milk)，中国汉族传统饮品，最早的豆浆为西汉淮南王刘安制作。将大豆用水泡涨后磨碎、过滤、煮沸而成","北京",R.mipmap.store_three));
-        storeList.add(new Store("填充用的面材","豆浆（Soybean Milk)，中国汉族传统饮品，最早的豆浆为西汉淮南王刘安制作。将大豆用水泡涨后磨碎、过滤、煮沸而成","北京",R.mipmap.store_four));
+        storeList.add(new Store("农家小碗菜","点餐快，菜品多。禾畈人家","北京",R.mipmap.xiaowancai));
+        storeList.add(new Store("麦多馅饼","经过300度高温、短时间的加工工艺，表层香酥爽口、里层细嫩有筋、口感独特，完整的保留了食品原有的营养元素，它快捷、方便、鲜香宜人、老少皆宜、健康时尚。","北京",R.mipmap.maiduomianbin));
+        storeList.add(new Store("担担面","著名的四川小吃，源起挑夫们在码头挑着担担卖面，所以名为担担面。用面粉擀制成面条，煮熟，舀上炒制的猪肉末而成。成菜面条细薄，卤汁酥香，咸鲜微辣，香气扑鼻，十分入味。","北京",R.mipmap.dandanmian));
+        storeList.add(new Store("原生豆浆","秉承原汁原味的制作理念，其营养物质、保健功效成分的含量高，对人体有很好的营养保健作用。","地点北京",R.mipmap.yuanmodoujiang));
+        storeList.add(new Store("石锅拌饭","发源地为韩国全州，后来演变为韩国的代表性食物。韩国全州的石锅拌饭名闻遐迩，拌饭里蕴涵着\"五行五脏五色\"的原理。","北京",R.mipmap.shiguobanfan));
     }
 
 }

@@ -29,7 +29,7 @@
         android:layout_weight="1"
         android:textColor="#ffa70b"
         android:textStyle="bold"
-        android:text="藤原豆腐店"
+        android:text="农家小碗菜"
         android:textSize="33dp"/>
 
     <com.gigamole.navigationtabstrip.NavigationTabStrip

@@ -24,20 +24,32 @@ public class MenuHorizontalPagerAdapter extends PagerAdapter implements View.OnC
     private int storeNumber;
     private final Utils.LibraryObject[] LIBRARIES = new Utils.LibraryObject[]{
             new Utils.LibraryObject(
-                    R.mipmap.store_one,
-                    "原生豆浆"
+                    R.mipmap.xiaoone,
+                    "酱炒黄豆芽"
             ),
             new Utils.LibraryObject(
-                    R.mipmap.store_two,
-                    "爱心牛肉面"
+                    R.mipmap.xiaotwo,
+                    "清炒大白菜"
             ),
             new Utils.LibraryObject(
-                    R.mipmap.store_three,
-                    "大烧饼"
+                    R.mipmap.xiaothree,
+                    "肉末豆腐"
             ),
             new Utils.LibraryObject(
-                    R.mipmap.store_four,
-                    "多麦馅饼"
+                    R.mipmap.xiaofour,
+                    "南瓜"
+            ),
+            new Utils.LibraryObject(
+                    R.mipmap.xiaofive,
+                    "菜秧"
+            ),
+            new Utils.LibraryObject(
+                    R.mipmap.xiaosix,
+                    "手撕包菜"
+            ),
+            new Utils.LibraryObject(
+                    R.mipmap.xiaoseven,
+                    "肉沫蒸蛋"
             )
     };
 

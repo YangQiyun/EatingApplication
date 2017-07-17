@@ -59,7 +59,7 @@ public class activity_menu extends AppCompatActivity {
         viewPager.setAdapter(new MenuMainPagerAdapter(getSupportFragmentManager(),storeNumber));
 
         final NavigationTabStrip navigationTabStrip = (NavigationTabStrip) findViewById(R.id.nts);
-        navigationTabStrip.setTitles("菜单栏", "总菜单");
+        navigationTabStrip.setTitles("特色菜", "总菜单");
         navigationTabStrip.setViewPager(viewPager);
     }
 

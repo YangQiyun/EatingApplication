@@ -1,21 +1,11 @@
 <resources>
-    <string name="app_name">食堂</string>
-    <string name="hello">hello</string>
+    <string name="app_name">御膳房</string>
+    <string name="hello">你要的营养在这里</string>
     <string name="helloSub">hello Sub</string>
     <string name="login_id">账号</string>
     <string name="login_psd">密码</string>
     <string name="login_regist">注册</string>
     <string name="login">登陆</string>
-
-    <string name="Airplane">Airplane</string>
-    <string name="Anchor">Anchor</string>
-    <string name="Bucket">Bucket</string>
-    <string name="Cloud">Cloud</string>
-    <string name="Film">Film</string>
-    <string name="Gears">Gears</string>
-    <string name="Heart">Heart</string>
-    <string name="Home">Home</string>
-    <string name="Present">Present</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

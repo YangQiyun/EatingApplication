@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#2f8120">
+    android:background="@drawable/firstlaunch">
     <TextView
         android:id="@+id/copy_right"
         android:layout_width="wrap_content"
@@ -37,6 +37,8 @@
                 <TextView android:id="@+id/app_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/gray_cc"
+                    android:textStyle="bold"
                     android:padding="6dip"
                     android:text="@string/app_name"
                     android:textSize="24sp"/>
@@ -56,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:padding="10dip"
+                android:textColor="@color/gray_cc"
                 android:text="@string/hello"
                 android:textSize="13sp"/>
             <ProgressBar android:id="@+id/refresh_list_footer_progressbar"
