@@ -9,12 +9,6 @@
         android:icon="@mipmap/ic_action_search"
         app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_share"
-        android:title="share"
-        android:orderInCategory="2"
-        android:icon="@mipmap/ic_action_share"
-        app:showAsAction="ifRoom" />
-
     <item android:id="@+id/action_person"
         android:title="person"
         android:orderInCategory="3"
