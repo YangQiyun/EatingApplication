@@ -25,9 +25,10 @@
         <activity android:name="com.seu.srtp.main.NewsActivity">
             android:parentActivityName=".MainActivity"
         </activity>
-        <activity android:name="com.seu.srtp.main.activity_menu">
+        <activity android:name="com.seu.srtp.main.ActivityMenu">
         </activity>
-        <activity android:name=".activity_person"></activity>
+        <activity android:name="com.seu.srtp.main.ActivityPerson"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.seu.srtp.main.R;
-import com.seu.srtp.main.activity_menu;
+import com.seu.srtp.main.ActivityMenu;
 
 import java.util.List;
 
@@ -76,7 +76,7 @@ public class StoreRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             storeHoler.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context, activity_menu.class);
+                    Intent intent=new Intent(context, ActivityMenu.class);
                     context.startActivity(intent);
                 }
             });
@@ -94,7 +94,7 @@ public class StoreRecycleViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             storeHoler.store_readMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(context, activity_menu.class);
+                    Intent intent=new Intent(context, ActivityMenu.class);
                     context.startActivity(intent);
                 }
             });

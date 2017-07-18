@@ -5,15 +5,138 @@
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="1">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/menu_person_toolbar"
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/titleGreen"
-        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/AppTheme.PopupOverlay">
-    </android.support.v7.widget.Toolbar>
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/menu_person_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/titleGreen"
+           >
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:text="我"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- 全圆角-->
+    <LinearLayout style="@style/wrap_layout"
+        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout style="@style/single_layout">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout style="@style/wrap_layout" >
+        <!-- 上圆角-->
+        <LinearLayout style="@style/top_layout">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/activity_person_ring"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        style="@style/usertext"
+                        android:layout_height="match_parent"
+                        android:text="消息" />
+                </LinearLayout>
+                <ImageView style="@style/img_arrow" android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <!-- 分割线 -->
+        <View style="@style/bg_line"/>
+        <!-- 无圆角-->
+        <LinearLayout style="@style/mid_layout">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/activity_person_start"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        style="@style/usertext"
+                        android:layout_height="match_parent"
+                        android:text="偏好设置" />
+                </LinearLayout>
+                <ImageView style="@style/img_arrow" android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+        <View style="@style/bg_line"/>
+        <!-- 下圆角-->
+        <LinearLayout style="@style/bottom_layout">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/activity_person_love"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        style="@style/usertext"
+                        android:layout_height="match_parent"
+                        android:text="收藏" />
+                </LinearLayout>
+                <ImageView style="@style/img_arrow" android:layout_alignParentRight="true"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!-- 全圆角-->
+    <LinearLayout style="@style/wrap_layout"
+        android:layout_marginTop="48dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout style="@style/single_layout">
+
+            <TextView
+                style="@style/quit"
+                android:text="退出登录" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

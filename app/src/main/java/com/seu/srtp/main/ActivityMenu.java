@@ -16,7 +16,7 @@ import com.seu.srtp.data.MenuMainPagerAdapter;
 /**
  * Created by Mind on 2017/3/23.
  */
-public class activity_menu extends AppCompatActivity {
+public class ActivityMenu extends AppCompatActivity {
     private  int storeNumber;
     ImageView imageView;
     private ViewPager viewPager;
