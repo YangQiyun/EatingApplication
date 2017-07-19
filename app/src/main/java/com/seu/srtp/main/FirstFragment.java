@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ddz.floatingactionbutton.FloatingActionMenu;
 import com.seu.srtp.data.Store;
 import com.seu.srtp.data.StoreRecycleViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Created by 杨棋允 on 2017/3/15.
@@ -24,6 +26,7 @@ public class FirstFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<Store> storeList;
     private StoreRecycleViewAdapter adapter;
+    private FloatingActionMenu floatingActionMenu;
     private  View mView;
 
 
@@ -57,7 +60,7 @@ public class FirstFragment extends Fragment {
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         layoutManager.scrollToPosition(0);
         recyclerView.setLayoutManager(layoutManager);
-
+        floatingActionMenu= (FloatingActionMenu) mView.findViewById(R.id.floatingbutton);
         //设置间隙内容，但是目前是无效的
         // int spacingInPixels = getResources().getDimensionPixelSize(R.dimen.space);
         // recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
@@ -67,7 +70,19 @@ public class FirstFragment extends Fragment {
         adapter=new StoreRecycleViewAdapter(storeList,getContext(),true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
 
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if (dy<0) {//上滑
+                    floatingActionMenu.setVisibility(View.VISIBLE);
+                }
+                else{
+                    floatingActionMenu.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
 
     }
 

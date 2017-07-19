@@ -26,6 +26,8 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.ddz.materialdesign:FloatingActionButton:1.0.4'
+    //noinspection GradleCompatible
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:cardview-v7:24.2.0'

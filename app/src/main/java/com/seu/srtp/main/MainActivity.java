@@ -1,19 +1,26 @@
 package com.seu.srtp.main;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.ddz.floatingactionbutton.FloatingActionButton;
+import com.ddz.floatingactionbutton.FloatingActionMenu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
+    private static final String TAG = "MainActivity";
+    private ViewPager viewPager;
+    private FloatingActionMenu floatingActionMenu;
+    private FloatingActionButton floatingActionButton_up,floatingActionButton_down;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Fragment+ViewPager+FragmentViewPager组合的使用
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
         MyFragmentPagerAdapter adapter = new MyFragmentPagerAdapter(getSupportFragmentManager(),
                 this);
         viewPager.setAdapter(adapter);
@@ -37,18 +44,10 @@ public class MainActivity extends AppCompatActivity {
         final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
-        //对于api23以上的版本调用以下的方法，不调用4.4版本的兼容,toolbar沉浸式状态栏
-       // StatusBarCompat.compat(this);
+      //  floatingActionMenu= (FloatingActionMenu) findViewById(R.id.floatingbutton);
+      //  floatingActionButton_up= (FloatingActionButton) findViewById(R.id.action_up);
+       // floatingActionButton_down= (FloatingActionButton) findViewById(R.id.action_down);
 
-        //悬浮的按钮设置监听内容
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "感谢您使用御膳房", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 

@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.view.ViewGroup;
 
+import com.ddz.floatingactionbutton.FloatingActionMenu;
+
 /**
  * Created by Mind on 2017/3/15.
  */
@@ -26,10 +28,11 @@ class MyFragmentPagerAdapter extends android.support.v4.app.FragmentPagerAdapter
 
     @Override
     public Fragment getItem(int position) {
-        if(position==0)
-            return  FirstFragment.newInstance(position);
-        if(position==1)
-            return TrendFragment.newInstance(position);
+        if(position==0){
+
+            return  FirstFragment.newInstance(position);}
+        if(position==1){
+            return TrendFragment.newInstance(position);}
         return com.seu.srtp.main.PageFragment.newInstance(position+2);
     }
 
