@@ -2,16 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "25.0.2"
+    buildToolsVersion '24.0.3'
     defaultConfig {
-        applicationId "com.seu.srtp.yushanfang"
-        minSdkVersion 15
+        applicationId "carteen.edu.seu.com.carteen"
+        minSdkVersion 19
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        renderscriptTargetApi 22
-        renderscriptSupportModeEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -19,23 +16,23 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    //It means Android studio DO NOT check PNG strictly.
-    aaptOptions.cruncherEnabled = false
-    aaptOptions.useNewCruncher = false
+    productFlavors {
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.ddz.materialdesign:FloatingActionButton:1.0.4'
-    //noinspection GradleCompatible
-    compile 'com.android.support:design:24.2.1'
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:cardview-v7:24.2.0'
-    compile 'com.android.support:recyclerview-v7:24.2.0'
-    compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
-    compile 'fr.tvbarthel.blurdialogfragment:lib:2.2.0'
-    compile(name:'infinitecycleviewpager-1.0.2', ext:'aar')
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:percent:24.2.0'
+    compile 'com.android.support:cardview-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    //网络框架
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okio:okio:1.5.0'
+    //ui
+    compile 'com.github.devlight.navigationtabstrip:navigationtabstrip:1.0.4'
+    compile(name:'infinitecycleviewpager-1.0.2', ext:'aar')
 }
 repositories {
     flatDir {

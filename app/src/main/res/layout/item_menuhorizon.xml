@@ -10,35 +10,77 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         app:cardCornerRadius="10dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true">
+<android.support.percent.PercentFrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:navilayout="http://schemas.android.com/apk/res-auto">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                navilayout:layout_heightPercent="70%"
+                navilayout:layout_widthPercent="100%">
+                <!--测试用的imageview-->
+                <ImageView
+                    android:id="@+id/image"
+                    android:src="@drawable/test1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-            <ImageView
-                android:id="@+id/img_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:src="@drawable/ic_menu_manage"/>
+            </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        navilayout:layout_heightPercent="30%"
+        navilayout:layout_widthPercent="100%"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
             <TextView
                 android:id="@+id/txt_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
-                android:textColor="#005fb0"
+                android:textColor="#d06a42"
                 android:textSize="36sp"
                 android:typeface="sans"
                 tools:text="Delivery"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000a09"
+                android:textSize="28sp"
+                android:typeface="sans"
+                android:gravity="left"
+                android:text="价格15元"/>
+            <TextView
+                android:id="@+id/item_rank"
+                android:layout_toRightOf="@id/item_price"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#778693"
+                android:textSize="28sp"
+                android:typeface="sans"
+                android:text="★★★★★4.7"/>
+        </RelativeLayout>
 
         </LinearLayout>
-
+</android.support.percent.PercentFrameLayout>
     </android.support.v7.widget.CardView>
 
 </FrameLayout>
