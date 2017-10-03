@@ -1,9 +1,9 @@
 package carteen.edu.seu.com.carteen.EatingSection;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import carteen.edu.seu.com.carteen.EatingSection.Menu.MenuDetailActivity;
 import carteen.edu.seu.com.carteen.Model.Food;
 import carteen.edu.seu.com.carteen.R;
 import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
@@ -20,7 +21,7 @@ import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
 /**
  * Created by GIGAMOLE on 7/27/16.
  */
-public class MenuspecialfragmentPagerAdapter extends PagerAdapter implements View.OnClickListener{
+public class MenuspecialfragmentPagerAdapter extends PagerAdapter {
     private Context mContext;
     private FragmentManager fm;
     private ArrayList<Food> foodlist;
@@ -81,7 +82,14 @@ public class MenuspecialfragmentPagerAdapter extends PagerAdapter implements Vie
                 break;
         }
 
-        view.setOnClickListener(this);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mContext, MenuDetailActivity.class);
+                intent.putExtra("foodid",foodlist.get(position).getFoodId());
+                mContext.startActivity(intent);
+            }
+        });
         container.addView(view);
         return view;
     }
@@ -96,20 +104,4 @@ public class MenuspecialfragmentPagerAdapter extends PagerAdapter implements Vie
         container.removeView((View) object);
     }
 
-    @Override
-    public void onClick(View v) {
-        int i=getItemPosition(v);
-        Log.d(TAG, "onClick: "+i);
-//        if(i==0){
-//            fragment_MenuDescrition temp=fragment_MenuDescrition.newInstance(1);
-//            temp.show(fm,"temptext");
-//            Log.d("00","0000000000000000000000");
-//        }
-//        else {
-//            fragment_MenuDescrition temp=fragment_MenuDescrition.newInstance(1);
-//            temp.show(fm,"temptext");
-//            Log.d("00","111111111111111111111111");
-//        }
-
-    }
 }

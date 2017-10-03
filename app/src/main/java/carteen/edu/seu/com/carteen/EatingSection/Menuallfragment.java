@@ -1,11 +1,13 @@
 package carteen.edu.seu.com.carteen.EatingSection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -14,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import carteen.edu.seu.com.carteen.EatingSection.Menu.MenuDetailActivity;
 import carteen.edu.seu.com.carteen.Model.Food;
 import carteen.edu.seu.com.carteen.R;
 import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
@@ -22,8 +25,8 @@ import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
  * Created by Mind on 2017/3/27.
  */
 public class Menuallfragment extends Fragment {
-
-
+    private ArrayList<Food> foodArrayList;
+    private static final String TAG = "Menuallfragment";
     private static String ARGS="storeNumber";
     private int storeNum;
 
@@ -45,6 +48,14 @@ public class Menuallfragment extends Fragment {
                 new String[]{"foodname","foodgrade","foodprice"},
                 new int[]{R.id.foodname,R.id.foodgrade,R.id.foodprice});
         LV.setAdapter(adapter);
+        LV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(Menuallfragment.this.getActivity(), MenuDetailActivity.class);
+                intent.putExtra("foodid",foodArrayList.get(position).getFoodId());
+                Menuallfragment.this.startActivity(intent);
+            }
+        });
         return view;
     }
 
@@ -52,7 +63,7 @@ public class Menuallfragment extends Fragment {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
         ACache cache=ACache.get(Menuallfragment.this.getActivity());
-        ArrayList<Food> foodArrayList= (ArrayList<Food>) cache.getAsObject("MenuData"+storeNum);
+        foodArrayList= (ArrayList<Food>) cache.getAsObject("MenuData"+storeNum);
         for(Food food:foodArrayList){
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("foodname", food.getFoodName());

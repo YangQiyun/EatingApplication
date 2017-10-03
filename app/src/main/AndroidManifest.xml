@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".EatingSection.Menu.MenuActivity"/>
+        <activity android:name=".EatingSection.Menu.MenuDetailActivity"/>
     </application>
 
 </manifest>

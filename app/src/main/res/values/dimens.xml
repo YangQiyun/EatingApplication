@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_toolbar_topsize">50dp</dimen>
     <dimen name="fragment_tablayout_heightsize">40dp</dimen>
+    <dimen name="activity_menudescrition_title">18sp</dimen>
+    <dimen name="activity_menu_conten">15sp</dimen>
 </resources>

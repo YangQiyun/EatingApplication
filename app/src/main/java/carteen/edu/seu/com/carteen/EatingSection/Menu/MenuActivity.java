@@ -54,7 +54,7 @@ public class MenuActivity extends AppCompatActivity {
         Toolbar toolbar= (Toolbar) findViewById(R.id.menu_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("返回");
+        setTitle("");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {//箭头的点击事件
             @Override
             public void onClick(View v) {

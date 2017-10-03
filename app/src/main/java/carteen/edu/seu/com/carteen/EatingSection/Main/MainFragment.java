@@ -54,12 +54,12 @@ public class MainFragment extends BaseFragment{
 
         //Food(String foodName, int foodWinId, int foodPrice, int foodCmtNum, int foodGrade, int foodIsSpecial, int foodImg)
         for(int i=0;i<5;++i){
-            fooddata.add(new Food("清炒大白菜",i,15,2,4,1,R.drawable.store_one));
-            fooddata.add(new Food("肉末豆腐",i,12,1,5,1,R.drawable.store_one));
-            fooddata.add(new Food("黄豆芽爆炒",i,0,2,3,0,R.drawable.store_one));
-            fooddata.add(new Food("肉末蒸蛋",i,8,0,4,1,R.drawable.store_one));
-            fooddata.add(new Food("手撕包菜",i,9,0,5,1,R.drawable.store_one));
-            fooddata.add(new Food("大白菜",i,10,0,4,0,R.drawable.store_one));
+            fooddata.add(new Food("清炒大白菜",i,15,2,4,1,R.drawable.store_one,0));
+            fooddata.add(new Food("肉末豆腐",i,12,1,5,1,R.drawable.store_one,1));
+            fooddata.add(new Food("黄豆芽爆炒",i,0,2,3,0,R.drawable.store_one,2));
+            fooddata.add(new Food("肉末蒸蛋",i,8,3,4,1,R.drawable.store_one,3));
+            fooddata.add(new Food("手撕包菜",i,9,4,5,1,R.drawable.store_one,4));
+            fooddata.add(new Food("大白菜",i,10,5,4,0,R.drawable.store_one,5));
             cache.put("MenuData"+i,fooddata);
             fooddata.clear();
         }
