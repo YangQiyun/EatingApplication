@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".EatingSection.Menu.MenuActivity"/>
         <activity android:name=".EatingSection.Menu.MenuDetailActivity"/>
+        <activity android:name=".Activity.PersonActivity"/>
     </application>
 
 </manifest>

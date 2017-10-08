@@ -1,5 +1,6 @@
 package carteen.edu.seu.com.carteen.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -8,9 +9,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import carteen.edu.seu.com.carteen.DyanamicSection.DynamicFragment;
 import carteen.edu.seu.com.carteen.EatingSection.Main.MainFragment;
+import carteen.edu.seu.com.carteen.FindSection.Findfragment;
 import carteen.edu.seu.com.carteen.Fragment.BaseFragment;
-import carteen.edu.seu.com.carteen.Fragment.TestFragment;
 import carteen.edu.seu.com.carteen.R;
 
 
@@ -21,6 +23,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ImageButton[] BottomButton;
     private BaseFragment[] fragmentGroup=new BaseFragment[3];
     private TextView tool_title;
+    private ImageButton personInformation;
     private static final String TAG = "MainActivity";
     private static int select=0;//为了进入app后直接进入食堂
     @Override
@@ -56,15 +59,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onAttachFragment(android.support.v4.app.Fragment fragment) {
         if(fragmentGroup[0]==null&&fragment instanceof MainFragment)
             fragmentGroup[0]=(BaseFragment) fragment;
-        if(fragmentGroup[1]==null&&fragment instanceof TestFragment)
+        if(fragmentGroup[1]==null&&fragment instanceof Findfragment)
             fragmentGroup[1]=(BaseFragment) fragment;
-        if(fragmentGroup[2]==null&&fragment instanceof TestFragment)
+        if(fragmentGroup[2]==null&&fragment instanceof DynamicFragment)
             fragmentGroup[2]=(BaseFragment) fragment;
         super.onAttachFragment(fragment);
     }
 
 
     private void initView(){
+        personInformation= (ImageButton) findViewById(R.id.m_toolbar_selector);
        tool_title= (TextView) findViewById(R.id.m_toolbar_title);
         BottomButton=new ImageButton[3];
        BottomButton[0]= (ImageButton) findViewById(R.id.button_eating);
@@ -75,6 +79,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
     private void initData(){
         hidefragment();
+        personInformation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,PersonActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
@@ -119,7 +130,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 if(0==i)
                     fragmentGroup[0]=new MainFragment();
                 else
-                fragmentGroup[i]= TestFragment.newInstance(i);
+                if(2==i)
+                    fragmentGroup[2]=new DynamicFragment();
+                else
+                fragmentGroup[i]= new Findfragment();
                 fragmentTransaction.add(R.id.fragmentlayout_content,fragmentGroup[i],a[i]);}
             else
                 fragmentTransaction.hide(fragmentManager.findFragmentByTag(a[i]));
