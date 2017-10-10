@@ -18,6 +18,7 @@
         <activity android:name=".EatingSection.Menu.MenuActivity"/>
         <activity android:name=".EatingSection.Menu.MenuDetailActivity"/>
         <activity android:name=".Activity.PersonActivity"/>
+        <activity android:name=".DyanamicSection.DynamicLostActivity"/>
     </application>
 
 </manifest>

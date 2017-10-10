@@ -1,11 +1,13 @@
 package carteen.edu.seu.com.carteen.DyanamicSection;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import carteen.edu.seu.com.carteen.DyanamicSection.util.RoundImageView;
 import carteen.edu.seu.com.carteen.Fragment.BaseFragment;
 import carteen.edu.seu.com.carteen.R;
 
@@ -24,7 +26,14 @@ public class DynamicFragment extends BaseFragment{
     }
 
     private  void initView(){
-
+        RoundImageView findcard=findViewById(R.id.card_find);
+        findcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mActivity,DynamicLostActivity.class);
+                mActivity.startActivity(intent);
+            }
+        });
     }
 
     private  void initData(){

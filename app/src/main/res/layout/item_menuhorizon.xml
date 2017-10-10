@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#d06a42"
-                android:textSize="36sp"
+                android:textSize="30sp"
                 android:typeface="sans"
                 tools:text="Delivery"/>
         <RelativeLayout
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#000a09"
-                android:textSize="28sp"
+                android:textSize="24sp"
                 android:typeface="sans"
                 android:gravity="left"
                 android:text="价格15元"/>
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#778693"
-                android:textSize="28sp"
+                android:textSize="24sp"
                 android:typeface="sans"
                 android:text="★★★★★4.7"/>
         </RelativeLayout>

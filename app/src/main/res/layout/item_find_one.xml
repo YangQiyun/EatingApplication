@@ -9,7 +9,7 @@
         android:layout_marginRight="@dimen/item_find_leftrightmarin"
         android:text="____________________________________________________________"
         android:maxLines="1"
-        android:textColor="@color/black"
+        android:textColor="@color/gray_cc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
    <RelativeLayout
@@ -35,7 +35,7 @@
                android:layout_marginTop="5dp"
                android:id="@+id/find_title"
                android:text="标题标题标题标题标题标题"
-               android:textSize="23sp"
+               android:textSize="20sp"
                android:textColor="@color/black"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
                android:layout_marginTop="35dp"
                android:id="@+id/find_author"
                android:text="小军"
-               android:textSize="14sp"
+               android:textSize="13sp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content" />
        </LinearLayout>

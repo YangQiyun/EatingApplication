@@ -42,6 +42,7 @@
                     app:cardElevation="5dp"
                     android:layout_height="200dp">
                     <carteen.edu.seu.com.carteen.DyanamicSection.util.RoundImageView
+                        android:id="@+id/card_find"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"

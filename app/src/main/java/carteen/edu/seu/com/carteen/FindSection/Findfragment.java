@@ -45,6 +45,6 @@ public class Findfragment extends BaseFragment{
     }
 
     private  void initData(){
-        
+
     }
 }
