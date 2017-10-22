@@ -39,21 +39,6 @@
                 android:layout_below="@+id/store_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <Button
-                    android:id="@+id/store_sharebtn"
-                    android:text="分享"
-                    android:background="#00000000"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <Button
-                    android:id="@+id/store_morebtn"
-                    android:background="#00000000"
-                    android:textColor="#7AD3E0"
-                    android:text="更多"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/store_name"
                     android:text="名字"
@@ -62,7 +47,7 @@
                     android:padding="5dp"
                     android:textColor="@color/orange"
                     android:textStyle="bold"
-                    android:gravity="right"
+                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

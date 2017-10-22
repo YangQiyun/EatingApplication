@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -82,26 +81,6 @@ public class contentFragmentStoreAdapter extends RecyclerView.Adapter<RecyclerVi
                     context.startActivity(intent);
                 }
             });
-            storeHoler.store_share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(Intent.ACTION_SEND);
-                    intent.setType("text/plain");
-                    intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
-                    intent.putExtra(Intent.EXTRA_TEXT, StoreList.get(position).getWinDes());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(Intent.createChooser(intent, StoreList.get(position).getWinName()));
-                }
-            });
-            storeHoler.store_readMore.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent=new Intent(context, MenuActivity.class);
-                    intent.putExtra("storeNumber",StoreList.get(position).getWinId());
-                    intent.putExtra("storeName",StoreList.get(position).getWinName());
-                    context.startActivity(intent);
-                }
-            });
         }
         if(holder instanceof MenuHolder){
             MenuHolder menuHolder= (MenuHolder) holder;
@@ -122,8 +101,6 @@ public class contentFragmentStoreAdapter extends RecyclerView.Adapter<RecyclerVi
         ImageView store_photo;
         TextView store_name;
         TextView store_desc;
-        Button store_share;
-        Button store_readMore;
 
         public StoreHolder(View itemView) {
             super(itemView);
@@ -131,8 +108,6 @@ public class contentFragmentStoreAdapter extends RecyclerView.Adapter<RecyclerVi
             store_photo= (ImageView) itemView.findViewById(R.id.store_photo);
             store_name= (TextView) itemView.findViewById(R.id.store_name);
             store_desc= (TextView) itemView.findViewById(R.id.store_desc);
-            store_share= (Button) itemView.findViewById(R.id.store_sharebtn);
-            store_readMore= (Button) itemView.findViewById(R.id.store_morebtn);
             //描述字体加粗
             store_desc.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         }

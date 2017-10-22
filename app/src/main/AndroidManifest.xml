@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="carteen.edu.seu.com.carteen">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +19,8 @@
         <activity android:name=".EatingSection.Menu.MenuDetailActivity"/>
         <activity android:name=".Activity.PersonActivity"/>
         <activity android:name=".DyanamicSection.DynamicLostActivity"/>
+        <activity android:name=".FindSection.FindActivity"/>
+        <activity android:name=".Activity.ShowBigimageActivity"/>
     </application>
 
 </manifest>

@@ -2,12 +2,14 @@ package carteen.edu.seu.com.carteen.Model;
 
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 
+import java.io.Serializable;
+
 import carteen.edu.seu.com.carteen.R;
 
 /**
  * Created by Mind on 2017/10/8.
  */
-public class Find implements MultiItemEntity{
+public class Find implements MultiItemEntity,Serializable{
     String Title;
     String author;
     int imge;
