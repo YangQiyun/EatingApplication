@@ -107,25 +107,36 @@
         >
     </carteen.edu.seu.com.carteen.DyanamicSection.util.MyGridView>
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginTop="5dp"-->
-        <!--android:layout_marginLeft="@dimen/dp_10"-->
-        <!--android:layout_marginRight="@dimen/dp_10"-->
-        <!--android:textColor="#060606"-->
-        <!--android:textSize="14sp"-->
-        <!--android:typeface="serif"-->
-        <!--android:maxLines="1"-->
-        <!--android:text="___________________________________________________________________"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="#060606"
+        android:textSize="14sp"
+        android:typeface="serif"
+        android:maxLines="1"
+        android:text="___________________________________________________________________"/>
+
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="5dp"
         android:id="@+id/rv_child"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone">
+        android:visibility="visible">
     </android.support.v7.widget.RecyclerView>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:textColor="#060606"
+        android:textSize="14sp"
+        android:typeface="serif"
+        android:maxLines="1"
+        android:text="___________________________________________________________________"/>
 </LinearLayout>
 
 </android.support.v7.widget.CardView>

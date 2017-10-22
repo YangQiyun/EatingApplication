@@ -3,6 +3,7 @@ package carteen.edu.seu.com.carteen.DyanamicSection;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -72,5 +73,12 @@ public class DyanmicLostAdapter extends BaseQuickAdapter<LostInfor,BaseViewHolde
         LinearLayoutManager manager = new LinearLayoutManager(context);
         manager.setAutoMeasureEnabled(true);
         rvchild.setLayoutManager(manager);
+        ;
+        //子recycleview的刷新
+        if(rvchild.getAdapter()==null){
+            Log.d(TAG, "convert: "+"this...............");
+            rvchild.setAdapter(new DynamicLostChildAdapter(context));
+            ((DynamicLostChildAdapter)rvchild.getAdapter()).setList(item.getCommentList());
+        }
     }
 }

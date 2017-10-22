@@ -8,4 +8,5 @@
     <dimen name="activity_menu_conten">15sp</dimen>
     <dimen name="fragment_dynamic_margin">15dp</dimen>
     <dimen name="item_find_leftrightmarin">15dp</dimen>
+    <dimen name="item_lost_comment">15sp</dimen>
 </resources>
