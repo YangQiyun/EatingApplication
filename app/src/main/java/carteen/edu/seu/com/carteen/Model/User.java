@@ -22,7 +22,7 @@ public class User implements Serializable{
 
 
     public User(){
-        this.usrNick="昵称";
+        this.usrNick="取个名字好难";
         this.img= R.drawable.head1;
     }
 

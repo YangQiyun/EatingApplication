@@ -27,16 +27,19 @@ public class LostInfor implements Serializable{
     }
 
     public LostInfor() {
-       this.lostuser=new User();
+        User user=new User();
+        user.setUsrNick("是狐狸呀");
+        user.setImg(R.drawable.find_four);
+       this.lostuser=user;
         this.time="2017-8-9";
-        this.content="明月几时有，把酒问青天，不知天上是何年，今昔又是几年";
+        this.content="我在食堂捡到了一个键盘好像!!!!!";
         this.lostCanteen=0;
         this.commentList=new ArrayList<>();
         commentList.add(new Comment());
         commentList.add(new Comment());
         this.imageList=new ArrayList<>();
-        imageList.add(R.drawable.test1);
-        imageList.add(R.drawable.src1);
+        imageList.add(R.drawable.jianpan1);
+        imageList.add(R.drawable.jianpan2);
     }
 
     public List<Integer> getImageList() {

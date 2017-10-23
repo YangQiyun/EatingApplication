@@ -8,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <carteen.edu.seu.com.carteen.EatingSection.utils.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/head1"/>
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/find_two"/>
         <LinearLayout
             android:layout_marginLeft="5dp"
             android:orientation="vertical"
@@ -32,7 +32,7 @@
     <TextView
         android:textSize="@dimen/activity_menu_conten"
         android:layout_marginLeft="85dp"
-        android:text="如果你无法简洁的表达你的想法，那只说明你还不够了解它。                                            -- 阿尔伯特·爱因斯坦"
+        android:text="今天吃过了，感觉不错"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <TextView
@@ -48,9 +48,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <carteen.edu.seu.com.carteen.EatingSection.utils.CircleImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/head1"/>
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:src="@drawable/find_five"/>
         <LinearLayout
             android:layout_marginLeft="5dp"
             android:orientation="vertical"
@@ -70,7 +70,7 @@
     <TextView
         android:textSize="@dimen/activity_menu_conten"
         android:layout_marginLeft="85dp"
-        android:text="如果你无法简洁的表达你的想法，那只说明你还不够了解它。                                            -- 阿尔伯特·爱因斯坦"
+        android:text="哈哈，好吃极了，推荐推荐"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

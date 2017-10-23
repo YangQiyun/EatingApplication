@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import carteen.edu.seu.com.carteen.DyanamicSection.util.RoundImageView;
 import carteen.edu.seu.com.carteen.Fragment.BaseFragment;
@@ -34,19 +35,35 @@ public class DynamicFragment extends BaseFragment{
                 mActivity.startActivity(intent);
             }
         });
-        RoundImageView getlostcard=findViewById(R.id.getlost);
-        getlostcard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(mActivity,SendAcitivity.class);
-                mActivity.startActivity(intent);
-            }
-        });
-        RoundImageView newcard=findViewById(R.id.card_new);
-        newcard.setOnClickListener(new View.OnClickListener() {
+        RoundImageView firecard=findViewById(R.id.fire);
+        firecard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(mActivity,NewProjectActivity.class);
+                mActivity.startActivity(intent);
+            }
+        });
+//        RoundImageView newcard=findViewById(R.id.card_new);
+//        newcard.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(mActivity,NewProjectActivity.class);
+//                mActivity.startActivity(intent);
+//            }
+//        });
+        ImageButton upload=findViewById(R.id.upload);
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mActivity,SendAcitivity.class);
+               mActivity.startActivity(intent);
+            }
+        });
+        RoundImageView noticecard=findViewById(R.id.canteen_notice);
+        noticecard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(mActivity,NoticeActivity.class);
                 mActivity.startActivity(intent);
             }
         });

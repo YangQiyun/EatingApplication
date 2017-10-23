@@ -42,6 +42,7 @@
         <activity android:name=".Activity.ShowBigimageActivity"/>
         <activity android:name=".DyanamicSection.SendAcitivity"/>
         <activity android:name=".DyanamicSection.NewProjectActivity"/>
+        <activity android:name=".DyanamicSection.NoticeActivity"/>
     </application>
 
 </manifest>

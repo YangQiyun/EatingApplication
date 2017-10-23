@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,12 +19,13 @@ import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
  * Created by Mind on 2017/10/3.
  */
 public class MenuDetailActivity extends AppCompatActivity {
-
+    private ImageView imageView;
     private TextView foodname;
     private TextView foodgrade;
     private TextView foodprice;
     private TextView fooddescription;
     private int foodid;
+    private int winid;
     private Food food;
     private static final String TAG = "MenuDetailActivitykk";
     
@@ -32,11 +34,15 @@ public class MenuDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_descrition);
         Intent intent=getIntent();
+        winid=intent.getIntExtra("winid",0);
         foodid=intent.getIntExtra("foodid",0);
         ACache cache=ACache.get(this);
-        ArrayList<Food> foodArrayList= (ArrayList<Food>) cache.getAsObject("MenuData"+foodid);
-        Log.d(TAG, "onCreate: foodid"+foodid);
-        food=foodArrayList.get(foodid);
+        ArrayList<Food> foodArrayList= (ArrayList<Food>) cache.getAsObject("MenuData"+winid);
+        for(Food mfood:foodArrayList)
+            if (mfood.getFoodId()==foodid){
+                food=mfood;
+                break;
+            }
         Log.d(TAG, "onCreate: foodprice"+food.getFoodPrice());
         initView();
         initData();
@@ -59,6 +65,7 @@ public class MenuDetailActivity extends AppCompatActivity {
          foodgrade= (TextView) findViewById(R.id.menu_grade);
          foodprice= (TextView) findViewById(R.id.menu_price);
          fooddescription= (TextView) findViewById(R.id.menu_des);
+        imageView= (ImageView) findViewById(R.id.menu_img);
     }
 
     private void initData(){
@@ -85,6 +92,6 @@ public class MenuDetailActivity extends AppCompatActivity {
                 foodgrade.setText("★★★★★");
                 break;
         }
-
+        imageView.setBackground(this.getResources().getDrawable(food.getFoodImg()));
     }
 }

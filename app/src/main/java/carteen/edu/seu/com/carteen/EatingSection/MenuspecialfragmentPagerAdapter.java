@@ -87,6 +87,7 @@ public class MenuspecialfragmentPagerAdapter extends PagerAdapter {
             public void onClick(View v) {
                 Intent intent=new Intent(mContext, MenuDetailActivity.class);
                 intent.putExtra("foodid",foodlist.get(position).getFoodId());
+                intent.putExtra("winid",foodlist.get(position).getFoodWinId());
                 mContext.startActivity(intent);
             }
         });

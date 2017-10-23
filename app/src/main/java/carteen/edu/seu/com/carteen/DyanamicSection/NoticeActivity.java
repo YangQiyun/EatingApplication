@@ -10,22 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import carteen.edu.seu.com.carteen.Activity.BaseActivity;
-import carteen.edu.seu.com.carteen.Model.LostInfor;
-import carteen.edu.seu.com.carteen.Model.User;
+import carteen.edu.seu.com.carteen.Model.NoticeInfor;
 import carteen.edu.seu.com.carteen.R;
 
 /**
- * Created by Mind on 2017/10/11.
+ * Created by Mind on 2017/10/23.
  */
-public class DynamicLostActivity extends BaseActivity{
+public class NoticeActivity extends BaseActivity{
 
-    private List<LostInfor> lostInfors=new ArrayList<>();
+
+    private List<NoticeInfor> noticeInfors=new ArrayList<>();
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dynamic);
+        setContentView(R.layout.activity_notice);
         initData();
         init();
     }
@@ -44,22 +44,27 @@ public class DynamicLostActivity extends BaseActivity{
 
         recyclerView= (RecyclerView) findViewById(R.id.rv_main);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new DyanmicLostAdapter(this,lostInfors));
+        recyclerView.setAdapter(new NoticeAdapter(this,noticeInfors));
     }
 
     private  void initData(){
-        LostInfor lostInfor=new LostInfor();
-        User user=new User();
-        user.setImg(R.drawable.src1);
-        user.setUsrNick("今日我最强");
-        lostInfor.setLostuser(user);
-        lostInfor.setContent("在桃园食堂丢失一把雨伞，见图，如果有看到请联系我");
-        lostInfor.setTime("2017-10-10");
-        lostInfors.add(lostInfor);
-        lostInfors.add(new LostInfor());
-        lostInfor.getImageList().clear();
-        lostInfor.getImageList().add(R.drawable.umbrella1);
-        lostInfor.getImageList().add(R.drawable.umbrella2);
+        NoticeInfor noticeInfor=new NoticeInfor();
+        noticeInfor.setTime("2017.09.28");
+        NoticeInfor.notice notice=new NoticeInfor.notice();
+        notice.setTitle("关于国庆节假期食堂运营的通知");
+        notice.setInformant("总务处");
+        noticeInfor.getInformation().add(notice);
+        noticeInfors.add(noticeInfor);
+        noticeInfor=new NoticeInfor();
+        noticeInfor.setTime("2017.08");
+        notice=new NoticeInfor.notice();
+        notice.setTitle("食堂近期的维修说明");
+        notice.setInformant("桃园");
+        noticeInfor.getInformation().add(notice);
+        notice=new NoticeInfor.notice();
+        notice.setTitle("假期后食堂正式营业的通知");
+        notice.setInformant("梅园");
+        noticeInfor.getInformation().add(notice);
+        noticeInfors.add(noticeInfor);
     }
-
 }

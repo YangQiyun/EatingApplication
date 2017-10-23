@@ -31,9 +31,7 @@ public class NewProjectActivity extends BaseActivity{
     }
 
     private void initData(){
-        foodList.add(new Food("肉末蒸蛋",0,8,3,4,1,R.drawable.store_one,3));
-        foodList.add(new Food("手撕包菜",1,9,4,5,1,R.drawable.store_one,4));
-        foodList.add(new Food("大白菜",1,10,5,4,0,R.drawable.store_one,5));
+        foodList.add(new Food("羊肉泡馍",0,8,3,4,1,R.drawable.food_yangroupaomo,3));
     }
 
     private void  initView(){

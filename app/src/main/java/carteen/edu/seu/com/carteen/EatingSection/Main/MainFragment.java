@@ -43,26 +43,49 @@ public class MainFragment extends BaseFragment{
         mainFragmentAdapter mainFragmentPagerAdapter=new mainFragmentAdapter(mActivity.getSupportFragmentManager(),mActivity);
         viewPager.setAdapter(mainFragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        alldata.add(new Windows(0,"农家小碗菜","点餐快，菜品多。禾畈人家","北京",R.drawable.test1) );
-        alldata.add(new Windows(1,"麦多馅饼","经过300度高温、短时间的加工工艺，表层香酥爽口、里层细嫩有筋、口感独特，完整的保留了食品原有的营养元素，它快捷、方便、鲜香宜人、老少皆宜、健康时尚。","北京",R.drawable.test1));
-        alldata.add(new Windows(2,"担担面","著名的四川小吃，源起挑夫们在码头挑着担担卖面，所以名为担担面。用面粉擀制成面条，煮熟，舀上炒制的猪肉末而成。成菜面条细薄，卤汁酥香，咸鲜微辣，香气扑鼻，十分入味。","北京",R.drawable.test1));
-        alldata.add(new Windows(3,"原生豆浆","秉承原汁原味的制作理念，其营养物质、保健功效成分的含量高，对人体有很好的营养保健作用。","地点北京",R.drawable.test1));
-        alldata.add(new Windows(4,"石锅拌饭","发源地为韩国全州，后来演变为韩国的代表性食物。韩国全州的石锅拌饭名闻遐迩，拌饭里蕴涵着\"五行五脏五色\"的原理。","北京",R.drawable.test1));
+        alldata.add(new Windows(0,"千层饼","层层相分，外黄里暄，酥软油润，热食不腻，凉吃不散，味道香美","梅园",R.drawable.window_one) );
+        alldata.add(new Windows(1,"担担面","面条细薄，卤汁酥香，咸鲜微辣，香气扑鼻，十分入味","梅园",R.drawable.window_two));
+        alldata.add(new Windows(2,"花式烩饭","花样百变，种类繁多，满足你的各种需求","梅园",R.drawable.window_three));
+        alldata.add(new Windows(3,"锡纸饭","任选素菜，锡纸炒饭，粒粒饱满，美味可口","梅园",R.drawable.window_four));
+        alldata.add(new Windows(4,"香扒饭","经典菜式，两种素菜，荤素搭配，营养美味","梅园",R.drawable.window_xiang));
 
         ACache cache=ACache.get(mActivity);
         cache.put("StoreData",alldata);
 
         //Food(String foodName, int foodWinId, int foodPrice, int foodCmtNum, int foodGrade, int foodIsSpecial, int foodImg)
-        for(int i=0;i<5;++i){
-            fooddata.add(new Food("清炒大白菜",i,15,2,4,1,R.drawable.store_one,0));
-            fooddata.add(new Food("肉末豆腐",i,12,1,5,1,R.drawable.store_one,1));
-            fooddata.add(new Food("黄豆芽爆炒",i,0,2,3,0,R.drawable.store_one,2));
-            fooddata.add(new Food("肉末蒸蛋",i,8,3,4,1,R.drawable.store_one,3));
-            fooddata.add(new Food("手撕包菜",i,9,4,5,1,R.drawable.store_one,4));
-            fooddata.add(new Food("大白菜",i,10,5,4,0,R.drawable.store_one,5));
-            cache.put("MenuData"+i,fooddata);
-            fooddata.clear();
-        }
 
+        fooddata.add(new Food("公婆饼",0,3,2,4,1,R.drawable.food_gongpobin,0));
+        fooddata.add(new Food("素卷饼",0,3,1,5,1,R.drawable.food_juanbin,1));
+        fooddata.add(new Food("原味手抓饼",0,3.5,2,3,0,R.drawable.food_purebin,2));
+        fooddata.add(new Food("手抓饼",0,4.5,3,4,1,R.drawable.food_shouzhuabin,3));
+        fooddata.add(new Food("酱香饼",0,2,4,5,1,R.drawable.food_jiangxiang,4));
+        fooddata.add(new Food("鸡蛋饼",0,2,5,4,0,R.drawable.food_eggbin,5));
+        cache.put("MenuData"+0,fooddata);
+        fooddata=new ArrayList<>();
+        fooddata.add(new Food("三鲜干拌面",1,6,2,4,1,R.drawable.food_sanxianganban,6));
+        fooddata.add(new Food("三鲜油泼面",1,8,1,5,1,R.drawable.food_sanxianyoupomian,7));
+        fooddata.add(new Food("三鲜面",1,8,2,3,0,R.drawable.food_sanxianmian,8));
+        fooddata.add(new Food("四川燃面",1,9,3,4,1,R.drawable.food_sichuan,9));
+        fooddata.add(new Food("干切牛肉油泼面",1,10,4,5,1,R.drawable.food_nirouyoupo,10));
+        fooddata.add(new Food("红烧牛肉面",1,10,5,4,0,R.drawable.food_hongshaoniuroumian,11));
+        fooddata.add(new Food("臊子面",1,8,3,4,1,R.drawable.food_zaozimian,12));
+        fooddata.add(new Food("西红柿鸡蛋面",1,5,4,5,1,R.drawable.food_xihongshi,13));
+        cache.put("MenuData"+1,fooddata);
+        fooddata=new ArrayList<>();
+        fooddata.add(new Food("大脸鸡排",2,11,2,4,1,R.drawable.food_dalianjipa,14));
+        fooddata.add(new Food("糖醋里脊",2,9,1,5,1,R.drawable.food_tanculiji,15));
+        fooddata.add(new Food("酸汤金针菇肥牛",2,11,2,3,0,R.drawable.food_jinzhen,16));
+        cache.put("MenuData"+2,fooddata);
+        fooddata=new ArrayList<>();
+        fooddata.add(new Food("香肠锡纸饭",3,9,2,4,1,R.drawable.food_xiangchang,17));
+        fooddata.add(new Food("鸡块锡纸饭",3,9,1,5,1,R.drawable.food_jikuai,18));
+        fooddata.add(new Food("火腿锡纸饭",3,10,2,3,0,R.drawable.food_huotui,19));
+        cache.put("MenuData"+3,fooddata);
+        fooddata=new ArrayList<>();
+        fooddata.add(new Food("杭椒牛柳",4,11,2,4,1,R.drawable.food_kanjiangniuliu,20));
+        fooddata.add(new Food("糖醋小排",4,12,1,5,1,R.drawable.food_tangcuxiapai,21));
+        fooddata.add(new Food("红烧肉",4,10,2,3,0,R.drawable.food_hongshaorou,22));
+        fooddata.add(new Food("酱香鸭腿",4,10,2,3,0,R.drawable.food_jiangxiangjitui,23));
+        cache.put("MenuData"+4,fooddata);
     }
 }

@@ -53,6 +53,7 @@ public class Menuallfragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(Menuallfragment.this.getActivity(), MenuDetailActivity.class);
                 intent.putExtra("foodid",foodArrayList.get(position).getFoodId());
+                intent.putExtra("winid",foodArrayList.get(position).getFoodWinId());
                 Menuallfragment.this.startActivity(intent);
             }
         });
