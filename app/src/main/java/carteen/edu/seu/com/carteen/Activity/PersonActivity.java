@@ -1,8 +1,10 @@
 package carteen.edu.seu.com.carteen.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import carteen.edu.seu.com.carteen.R;
 
@@ -28,6 +30,13 @@ public class PersonActivity extends BaseActivity{
                 finish();
             }
         });
-
+        TextView quit= (TextView) findViewById(R.id.quit);
+        quit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(PersonActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

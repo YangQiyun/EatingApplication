@@ -51,7 +51,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         Log.d(TAG, "onResume: "+cuttent);
         if(cuttent<=1){
             hidefragment();
-            BottomButton[2].callOnClick();
+            BottomButton[0].callOnClick();
         }
     }
 

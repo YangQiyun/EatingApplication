@@ -172,6 +172,7 @@
         <LinearLayout style="@style/single_layout">
 
             <TextView
+                android:id="@+id/quit"
                 style="@style/quit"
                 android:text="退出登录" />
         </LinearLayout>
