@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import carteen.edu.seu.com.carteen.EatingSection.Menu.MenuActivity;
@@ -68,7 +70,8 @@ public class contentFragmentStoreAdapter extends RecyclerView.Adapter<RecyclerVi
         Log.d("tag",String.valueOf(position));
         if(holder instanceof StoreHolder){
             StoreHolder storeHoler=(StoreHolder)holder;
-            storeHoler.store_photo.setImageResource(StoreList.get(position).getWinImgUrl());
+            //storeHoler.store_photo.setImageResource(StoreList.get(position).getWinImgUrl());
+            Glide.with(context).load(StoreList.get(position).getWinimgUrl()).into(storeHoler.store_photo);
             storeHoler.store_name.setText(StoreList.get(position).getWinName());
             storeHoler.store_desc.setText(StoreList.get(position).getWinDes());
 

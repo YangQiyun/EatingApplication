@@ -31,7 +31,7 @@ public class NewProjectActivity extends BaseActivity{
     }
 
     private void initData(){
-        foodList.add(new Food("羊肉泡馍",0,8,3,4,1,R.drawable.food_yangroupaomo,3));
+        foodList.add(new Food("羊肉泡馍",0,"8元",3,4,1,"http://ox5cwubcf.bkt.clouddn.com/%E6%A2%85%E5%9B%AD-%E5%A6%82%E6%84%8F%E9%A6%84%E9%A5%A8-%E6%B0%B4%E9%A5%BA.png",3));
     }
 
     private void  initView(){

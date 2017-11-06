@@ -9,8 +9,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
+import carteen.edu.seu.com.carteen.Activity.ShowBigimageActivity;
 import carteen.edu.seu.com.carteen.Model.Food;
 import carteen.edu.seu.com.carteen.R;
 import carteen.edu.seu.com.carteen.Utils.Cache.ACache;
@@ -38,11 +41,14 @@ public class MenuDetailActivity extends AppCompatActivity {
         foodid=intent.getIntExtra("foodid",0);
         ACache cache=ACache.get(this);
         ArrayList<Food> foodArrayList= (ArrayList<Food>) cache.getAsObject("MenuData"+winid);
-        for(Food mfood:foodArrayList)
-            if (mfood.getFoodId()==foodid){
-                food=mfood;
+        for(Food mfood:foodArrayList) {
+            Log.d(TAG, "onCreate: "+mfood.getFoodId());
+            if (mfood.getFoodId() == foodid) {
+                food = mfood;
+                Log.d(TAG, "onCreate: foodprice find");
                 break;
             }
+        }
         Log.d(TAG, "onCreate: foodprice"+food.getFoodPrice());
         initView();
         initData();
@@ -70,7 +76,7 @@ public class MenuDetailActivity extends AppCompatActivity {
 
     private void initData(){
         foodname.setText(food.getFoodName());
-        foodprice.setText(food.getFoodPrice()+"元");
+        foodprice.setText(food.getFoodPrice());
         fooddescription.setText(food.getFooddescription());
         switch (food.getFoodGrade()){
             case 0:
@@ -92,6 +98,18 @@ public class MenuDetailActivity extends AppCompatActivity {
                 foodgrade.setText("★★★★★");
                 break;
         }
-        imageView.setBackground(this.getResources().getDrawable(food.getFoodImg()));
+        Glide.with(MenuDetailActivity.this).load(food.getFoodImg()).placeholder(R.drawable.loading_error).into(imageView);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MenuDetailActivity.this,ShowBigimageActivity.class);
+                Bundle temp=new Bundle();
+                ArrayList<String> img=new ArrayList<String>();
+                img.add(food.getFoodImg());
+                temp.putStringArrayList(ShowBigimageActivity.LIST,img);
+                intent.putExtras(temp);
+                startActivity(intent);
+            }
+        });
     }
 }

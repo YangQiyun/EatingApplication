@@ -88,7 +88,7 @@ public class Menuallfragment extends Fragment {
                     map.put("foodgrade", "★★★★★");
                     break;
             }
-            map.put("foodprice", food.getFoodPrice()+"元");
+            map.put("foodprice", food.getFoodPrice());
             list.add(map);
         }
         return list;

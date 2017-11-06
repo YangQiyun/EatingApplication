@@ -11,13 +11,23 @@ public class Windows implements Serializable{
     String winCantType;
     String winDes;
     int winImgUrl;
+    String winimgUrl;
 
-    public Windows(int winId,String winName,String winDes, String winCantType,int winImgUrl) {
+    public Windows(int winId,String winName,String winDes, String winCantType,int winImgUrl,String winimgUrl) {
         this.winId=winId;
         this.winName = winName;
         this.winCantType = winCantType;
         this.winImgUrl = winImgUrl;
         this.winDes = winDes;
+        this.winimgUrl=winimgUrl;
+    }
+
+    public String getWinimgUrl() {
+        return winimgUrl;
+    }
+
+    public void setWinimgUrl(String winimgUrl) {
+        this.winimgUrl = winimgUrl;
     }
 
     public int getWinId() {

@@ -10,14 +10,14 @@ public class Food implements Serializable{
     String foodName;
     int foodCantId;
     int foodWinId;
-    double foodPrice;
+    String foodPrice;
     int foodCmtNum;//评论数
     int foodGrade;
     int foodIsSpecial;
-    int foodImg;
+    String foodImg;
     String fooddescription;
 
-    public Food(String foodName, int foodWinId, double foodPrice, int foodCmtNum, int foodGrade, int foodIsSpecial, int foodImg,int foodId) {
+    public Food(String foodName, int foodWinId, String foodPrice, int foodCmtNum, int foodGrade, int foodIsSpecial, String foodImg,int foodId) {
         this.foodId=foodId;
         this.foodName = foodName;
         this.foodWinId = foodWinId;
@@ -68,11 +68,11 @@ public class Food implements Serializable{
         this.foodWinId = foodWinId;
     }
 
-    public double getFoodPrice() {
+    public String getFoodPrice() {
         return foodPrice;
     }
 
-    public void setFoodPrice(double foodPrice) {
+    public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
     }
 
@@ -100,11 +100,11 @@ public class Food implements Serializable{
         this.foodIsSpecial = foodIsSpecial;
     }
 
-    public int getFoodImg() {
+    public String getFoodImg() {
         return foodImg;
     }
 
-    public void setFoodImg(int foodImg) {
+    public void setFoodImg(String foodImg) {
         this.foodImg = foodImg;
     }
 }

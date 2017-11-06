@@ -3,6 +3,7 @@ package carteen.edu.seu.com.carteen;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
@@ -15,6 +16,8 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import java.io.File;
 
+import carteen.edu.seu.com.carteen.Utils.DBmanager;
+
 /**
  * Created by Bob on 15/8/18.
  */
@@ -24,6 +27,8 @@ public class MyApplication extends Application {
     public static int screenWidth, screenHeight;
     public static String cache_image_path, photo_path;
     public static File cacheImageDir, photoDir;
+    public static DBmanager dBmanager;
+    public static SQLiteDatabase sqLiteDatabase;
     public static MyApplication getInstance() {
         return instance;
     }
@@ -57,6 +62,10 @@ public class MyApplication extends Application {
                // DemoContext.init(this);
             }
         }
+
+        //初始化数据库
+        dBmanager=new DBmanager(getApplicationContext());
+        sqLiteDatabase=dBmanager.DBmanager("canteen");
     }
 
     public void getScreenDimension() {
@@ -148,29 +157,3 @@ public class MyApplication extends Application {
     }
 }
 
-//下面三个为好友列表四个账号中的三个账号信息，分别为:用户userid，token，登录邮箱，密码，昵称
-
-
-/**
- * 56146
- * rjlNearK6Qzu3MxMbMrQPLI6ZiT8q7s0UEaMPWY0lMwZFCr6nvpDtW4C3cjQ9tv4cIQMvwbkJb6xzmBRkFjv+Q==
- * 112@rongcloud.com
- * 123456
- * rongcloud112
- */
-
-/**
- * 56147
- * ke0BCyqQnwWiagWoS1ckzrI6ZiT8q7s0UEaMPWY0lMwZFCr6nvpDtX2/KvQEWEDo6r3YdoOyCDqUgN53uY4SEA==
- * 113@rongcloud.com
- * 123456
- * rongcloud113
- */
-
-/**
- * 56148
- * mYLERi6S6fkqdGjEIJrEubI6ZiT8q7s0UEaMPWY0lMwZFCr6nvpDtQIt9svl5Wir1X0Zf3Hy5T1QRLmZJrAbgQ==
- * 114@rongcloud.com
- * 123456
- * rongcloud114
- */

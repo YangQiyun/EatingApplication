@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import carteen.edu.seu.com.carteen.EatingSection.Menu.MenuDetailActivity;
@@ -58,9 +60,9 @@ public class MenuspecialfragmentPagerAdapter extends PagerAdapter {
         TextView foodname= (TextView) view.findViewById(R.id.txt_item);
         TextView foodprice= (TextView) view.findViewById(R.id.item_price);
         TextView foodgrade= (TextView) view.findViewById(R.id.item_rank);
-        foodprice.setText("价格"+food.getFoodPrice()+"元");
+        foodprice.setText("价格"+food.getFoodPrice());
         foodname.setText(food.getFoodName());
-        imageView.setImageResource(food.getFoodImg());
+        Glide.with(mContext).load(food.getFoodImg()).into(imageView);
         switch (food.getFoodGrade()){
             case 0:
                 foodgrade.setText("☆☆☆☆★");
